@@ -20,7 +20,7 @@ This project is a full-stack web application combining a React and Redux fronten
 ### Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/102vansh/signupscreen.git
+   git clone https://github.com/102vansh/signupscreen-BrainOp.git
    
    ```
 
