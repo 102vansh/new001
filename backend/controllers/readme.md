@@ -21,28 +21,28 @@ This document provides an overview of the code responsible for user authenticati
 The following sections describe the various operations supported by the code.
 
 ### User Registration
-- **Endpoint**: `exports.register`
+- **Endpoint**: `api/v1/user/register`
 - **Description**: Registers a new user, uploads an avatar to Cloudinary, and stores user details in MongoDB.
 - **Validation**: Ensures required fields are provided and passwords match.
 - **Error Handling**: Returns an error if user already exists, passwords don't match, or avatar upload fails.
 - **Cloudinary Integration**: Uploads the avatar to Cloudinary and stores the public ID and URL in MongoDB.
 
 ### User Login
-- **Endpoint**: `exports.login`
+- **Endpoint**: `api/v1/user/login`
 - **Description**: Authenticates a user with email and password, then generates a JWT token.
 - **Validation**: Checks if the user exists and if the password matches.
 - **Error Handling**: Returns an error if user not found or passwords don't match.
 - **Email Notification**: Sends a confirmation email upon successful login.
 
 ### Forgot Password
-- **Endpoint**: `exports.forgotpassword`
+- **Endpoint**: `api/v1/user/forgotpassword`
 - **Description**: Generates a reset token and sends it to the user's email.
 - **Validation**: Checks if the user exists.
 - **Error Handling**: Returns an error if user not found or email sending fails.
 - **Email Integration**: Uses Resend to send the reset link via email.
 
 ### Change Password
-- **Endpoint**: `exports.changepassword`
+- **Endpoint**: `api/v1/user/changepassword/:token`
 - **Description**: Changes the user's password based on a reset token.
 - **Validation**: Ensures the token is valid and not expired, and passwords match.
 - **Error Handling**: Returns an error if the token is invalid, expired, or passwords don't match.
